@@ -1,0 +1,40 @@
+//Find Second Maximum In An Array
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the Length of the Array: ");
+    int N=sc.nextInt();
+    int[] arr=new int[N];
+    System.out.println("Enter the Array Elements :");
+    for(int i=0;i<N;i++)
+      {
+        arr[i]=sc.nextInt();
+      }
+    int max=0;
+    int sMax=0;
+    if(arr[0]>arr[1])
+    {
+      max=arr[0];
+      sMax=arr[1];
+    }
+    else
+    {
+      max=arr[1];
+      sMax=arr[0];
+    }
+    for(int i=2;i<N;i++)
+      {
+        if(arr[i]>max)
+        {
+          sMax=max;
+          max=arr[i];
+        }
+        else if(sMax<arr[i])
+        {
+          sMax=arr[i];
+        }
+      }
+    System.out.print(sMax);
+  }
+}
